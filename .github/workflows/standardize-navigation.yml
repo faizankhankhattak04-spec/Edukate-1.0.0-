@@ -1,0 +1,87 @@
+name: Standardize SpeakO navigation
+
+on:
+  push:
+    branches:
+      - seo/fix-2-navigation-wechat-booking
+
+permissions:
+  contents: write
+
+jobs:
+  standardize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Standardize navigation in HTML pages
+        run: |
+          python3 <<'PY'
+          from pathlib import Path
+          import re
+
+          nav = '''<!-- Navbar Start -->
+          <div class="container-fluid p-0">
+              <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0 px-lg-5" aria-label="Main navigation">
+                  <a href="index.html" class="navbar-brand ml-lg-3" aria-label="SpeakO home">
+                      <h1 class="m-0 text-uppercase text-primary"><i class="fa fa-book-reader mr-3" aria-hidden="true"></i>SpeakO</h1>
+                  </a>
+                  <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse justify-content-between px-lg-3" id="navbarCollapse">
+                      <div class="navbar-nav mx-auto py-0">
+                          <a href="index.html" class="nav-item nav-link">Home</a>
+                          <a href="about.html" class="nav-item nav-link">About SpeakO</a>
+                          <a href="course.html" class="nav-item nav-link">Courses</a>
+                          <a href="team.html" class="nav-item nav-link">Teachers</a>
+                          <a href="contact.html#pricing" class="nav-item nav-link">Pricing</a>
+                          <a href="contact.html" class="nav-item nav-link">Contact</a>
+                      </div>
+                      <a href="contact.html#trial" class="btn btn-primary py-2 px-4 d-none d-lg-block">Book ¥20 Trial</a>
+                  </div>
+              </nav>
+          </div>
+          <!-- Navbar End -->'''
+
+          topbar = '''<!-- Topbar Start -->
+          <div class="container-fluid bg-dark">
+              <div class="row py-2 px-lg-5">
+                  <div class="col-12 text-center">
+                      <div class="d-inline-flex align-items-center text-white">
+                          <small><i class="fa fa-weixin mr-2" aria-hidden="true"></i>WeChat: SHAH1122-COM</small>
+                          <small class="px-3">|</small>
+                          <small><i class="fa fa-envelope mr-2" aria-hidden="true"></i>speakup521@gmail.com</small>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- Topbar End -->'''
+
+          for path in Path('.').glob('*.html'):
+              if path.name in {'index.html', 'contact.html'}:
+                  continue
+              text = path.read_text(encoding='utf-8')
+              new_text, nav_count = re.subn(r'<!-- Navbar Start -->.*?<!-- Navbar End -->', nav, text, count=1, flags=re.S)
+              if nav_count != 1:
+                  print(f'SKIP navbar: {path} (found {nav_count})')
+                  continue
+              new_text, top_count = re.subn(r'<!-- Topbar Start -->.*?<!-- Topbar End -->', topbar, new_text, count=1, flags=re.S)
+              if top_count != 1:
+                  print(f'WARNING topbar: {path} (found {top_count})')
+              path.write_text(new_text, encoding='utf-8')
+              print(f'UPDATED {path}')
+          PY
+
+      - name: Commit navigation updates
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- '*.html'
+          if git diff --cached --quiet; then
+            echo "No navigation changes needed."
+            exit 0
+          fi
+          git commit -m "fix: standardize SpeakO navigation across pages"
+          git push

@@ -1,72 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
-    <title>Edukate - Online Education Website Template</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Free HTML Templates" name="keywords">
-    <meta content="Free HTML Templates" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SpeakO provides 1-to-1 online English classes for Chinese students. Learn speaking, conversation, IELTS, academic and kids English with flexible 40-minute lessons.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#2878eb">
+    <title>SpeakO | 1-to-1 Online English Classes for Chinese Students</title>
+    <link rel="canonical" href="https://speako.example/">
 
-    <!-- Favicon -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="SpeakO | 1-to-1 Online English Classes for Chinese Students">
+    <meta property="og:description" content="Personalized 1-to-1 English lessons for Chinese students. Try a 40-minute assessment and personalized learning recommendation for ¥20.">
+    <meta property="og:url" content="https://speako.example/">
+    <meta property="og:site_name" content="SpeakO">
+
     <link href="img/favicon.ico" rel="icon">
-
-    <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"> 
-
-    <!-- Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
-</head>
 
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"EducationalOrganization",
+      "name":"SpeakO",
+      "description":"1-to-1 online English classes for Chinese students.",
+      "email":"speakup521@gmail.com",
+      "telephone":"+86 19819208727",
+      "areaServed":"CN",
+      "availableLanguage":["English","Chinese"],
+      "offers":{
+        "@type":"Offer",
+        "name":"SpeakO 40-minute English lesson",
+        "price":"40",
+        "priceCurrency":"CNY"
+      }
+    }
+    </script>
+</head>
 <body>
-    <!-- Topbar Start -->
+    <!-- Topbar -->
     <div class="container-fluid bg-dark">
         <div class="row py-2 px-lg-5">
-            <div class="col-lg-6 text-center text-lg-left mb-2 mb-lg-0">
+            <div class="col-12 text-center text-lg-left">
                 <div class="d-inline-flex align-items-center text-white">
-                    <small><i class="fa fa-phone-alt mr-2"></i>+012 345 6789</small>
+                    <small><i class="fa fa-phone-alt mr-2"></i>+86 19819208727</small>
                     <small class="px-3">|</small>
-                    <small><i class="fa fa-envelope mr-2"></i>faizankhankhattak04@.com</small>
-                </div>
-            </div>
-            <div class="col-lg-6 text-center text-lg-right">
-                <div class="d-inline-flex align-items-center">
-                    <a class="text-white px-2" href="">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a class="text-white px-2" href="">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a class="text-white px-2" href="">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a class="text-white px-2" href="">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a class="text-white pl-2" href="">
-                        <i class="fab fa-youtube"></i>
-                    </a>
+                    <small><i class="fa fa-envelope mr-2"></i>speakup521@gmail.com</small>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Topbar End -->
 
-
-    <!-- Navbar Start -->
+    <!-- Navbar -->
     <div class="container-fluid p-0">
-        <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0 px-lg-5">
-            <a href="index.html" class="navbar-brand ml-lg-3">
-                <h1 class="m-0 text-uppercase text-primary"><i class="fa fa-book-reader mr-3"></i>Edukate</h1>
+        <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0 px-lg-5" aria-label="Main navigation">
+            <a href="index.html" class="navbar-brand ml-lg-3" aria-label="SpeakO home">
+                <h1 class="m-0 text-uppercase text-primary"><i class="fa fa-book-reader mr-3"></i>SpeakO</h1>
             </a>
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-between px-lg-3" id="navbarCollapse">
@@ -74,530 +69,210 @@
                     <a href="index.html" class="nav-item nav-link active">Home</a>
                     <a href="about.html" class="nav-item nav-link">About</a>
                     <a href="course.html" class="nav-item nav-link">Courses</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
-                        <div class="dropdown-menu m-0">
-                            <a href="detail.html" class="dropdown-item">Course Detail</a>
-                            <a href="feature.html" class="dropdown-item">Our Features</a>
-                            <a href="team.html" class="dropdown-item">Instructors</a>
-                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                        </div>
-                    </div>
+                    <a href="team.html" class="nav-item nav-link">Teachers</a>
                     <a href="contact.html" class="nav-item nav-link">Contact</a>
                 </div>
-                <a href="" class="btn btn-primary py-2 px-4 d-none d-lg-block">Join Us</a>
+                <a href="contact.html" class="btn btn-primary py-2 px-4 d-none d-lg-block">Book ¥20 Trial</a>
             </div>
         </nav>
     </div>
-    <!-- Navbar End -->
 
-
-    <!-- Header Start -->
-    <div class="jumbotron jumbotron-fluid position-relative overlay-bottom" style="margin-bottom: 90px;">
+    <!-- Hero -->
+    <header class="jumbotron jumbotron-fluid position-relative overlay-bottom" style="margin-bottom: 90px;">
         <div class="container text-center my-5 py-5">
-            <h1 class="text-white mt-4 mb-4">Learn From Home</h1>
-            <h1 class="text-white display-1 mb-5">Education Courses</h1>
-            <div class="mx-auto mb-5" style="width: 100%; max-width: 600px;">
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <button class="btn btn-outline-light bg-white text-body px-4 dropdown-toggle" type="button" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">Courses</button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">General English	Beginner & Intermediate</a>
-                            <a class="dropdown-item" href="#">Exam Prep	IELTS Preparation</a>
-                            <a class="dropdown-item" href="#"> Business English	Professional Communication</a>
-                            <a class="dropdown-item" href="#"> Spoken Confidence	Conversation Fluency</a>
-                            <a class="dropdown-item" href="#"> Kids English	Young Learners</a>
-                        </div>
+            <p class="text-white text-uppercase font-weight-bold mb-3">1-to-1 Online English Classes for Chinese Students</p>
+            <h1 class="text-white mt-4 mb-4">Learn English With a Teacher Who Focuses on You</h1>
+            <h2 class="text-white display-4 mb-5">Speak with confidence. Learn at your pace.</h2>
+            <p class="lead text-white mb-4">40-minute personalized lessons for beginners, kids, advanced learners, IELTS, academic and everyday English.</p>
+            <a href="contact.html" class="btn btn-secondary py-3 px-5 mr-2">Book ¥20 Trial</a>
+            <a href="course.html" class="btn btn-light py-3 px-5">View Courses</a>
+        </div>
+    </header>
+
+    <!-- Trial offer -->
+    <section class="container-fluid py-5" aria-labelledby="trial-heading">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-7 mb-4 mb-lg-0">
+                    <div class="section-title position-relative mb-4">
+                        <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Start with SpeakO</h6>
+                        <h2 id="trial-heading" class="display-4">Try a 40-Minute English Assessment for ¥20</h2>
                     </div>
-                    <input type="text" class="form-control border-light" style="padding: 30px 25px;" placeholder="Keyword">
-                    <div class="input-group-append">
-                        <button class="btn btn-secondary px-4 px-lg-5">Search</button>
+                    <p class="mb-4">Your trial is more than a sample lesson. A SpeakO teacher will assess your current English level, talk with you about your goals, and give you a personalized learning recommendation.</p>
+                    <div class="row">
+                        <div class="col-md-4 mb-3"><strong><i class="fa fa-check text-primary mr-2"></i>40 minutes</strong><br><span>Personalized trial</span></div>
+                        <div class="col-md-4 mb-3"><strong><i class="fa fa-check text-primary mr-2"></i>Level assessment</strong><br><span>Know your starting point</span></div>
+                        <div class="col-md-4 mb-3"><strong><i class="fa fa-check text-primary mr-2"></i>Learning plan</strong><br><span>Next-step recommendation</span></div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="bg-light text-center p-5">
+                        <h3 class="mb-2">Trial Class</h3>
+                        <div class="display-3 text-primary font-weight-bold">¥20</div>
+                        <p class="mb-4">40 minutes + English level assessment + personalized recommendation</p>
+                        <a href="contact.html" class="btn btn-primary py-3 px-5">Book Your Trial</a>
+                        <p class="small mt-3 mb-0">Contact us on WeChat: <strong>SHAH1122-COM</strong></p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Header End -->
+    </section>
 
-
-    <!-- About Start -->
-    <div class="container-fluid py-5">
+    <!-- About SpeakO -->
+    <section class="container-fluid py-5 bg-light" aria-labelledby="about-heading">
         <div class="container py-5">
-            <div class="row">
+            <div class="row align-items-center">
                 <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 500px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100" src="img/about.png" style="object-fit: cover;">
+                        <img class="position-absolute w-100 h-100" src="img/about.png" style="object-fit: cover;" alt="Online English learning with SpeakO">
                     </div>
                 </div>
                 <div class="col-lg-7">
                     <div class="section-title position-relative mb-4">
-                        <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">About Us</h6>
-                        <h1 class="display-4">First Choice For Online Education Anywhere</h1>
+                        <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">About SpeakO</h6>
+                        <h2 id="about-heading" class="display-4">Personalized Online English Learning for China</h2>
                     </div>
-                    <p>Your global future starts with English. We're here to make sure you're ready.
-
-Learnz is an online English academy founded by experienced educators who understand the unique challenges Chinese learners face—from pronunciation hurdles to building confidence in professional settings.
-
-We don't believe in one-size-fits-all. Every student gets a personalized learning plan, real-world practice, and direct access to instructors who have taught in over 10 countries.</p>
+                    <p>SpeakO offers one-to-one online English lessons for Chinese students of all ages and English levels. Our teachers help students build practical English skills through personalized lessons, conversation practice and clear learning goals.</p>
+                    <p>Classes are flexible and delivered online through WeChat. Choose a single lesson, a package or a monthly plan based on your learning needs.</p>
                     <div class="row pt-3 mx-0">
-                        <div class="col-3 px-0">
-                            <div class="bg-success text-center p-4">
-                                <h1 class="text-white" data-toggle="counter-up">5</h1>
-                                <h6 class="text-uppercase text-white">Available<span class="d-block">Subjects</span></h6>
-                            </div>
-                        </div>
-                        <div class="col-3 px-0">
-                            <div class="bg-primary text-center p-4">
-                                <h1 class="text-white" data-toggle="counter-up">6</h1>
-                                <h6 class="text-uppercase text-white">Online<span class="d-block">Courses</span></h6>
-                            </div>
-                        </div>
-                        <div class="col-3 px-0">
-                            <div class="bg-secondary text-center p-4">
-                                <h1 class="text-white" data-toggle="counter-up">4</h1>
-                                <h6 class="text-uppercase text-white">Skilled<span class="d-block">Instructors</span></h6>
-                            </div>
-                        </div>
-                        <div class="col-3 px-0">
-                            <div class="bg-warning text-center p-4">
-                                <h1 class="text-white" data-toggle="counter-up">15</h1>
-                                <h6 class="text-uppercase text-white">Happy<span class="d-block">Students</span></h6>
-                            </div>
-                        </div>
+                        <div class="col-6 col-md-3 px-0"><div class="bg-success text-center p-4"><h3 class="text-white">6</h3><h6 class="text-uppercase text-white">Courses</h6></div></div>
+                        <div class="col-6 col-md-3 px-0"><div class="bg-primary text-center p-4"><h3 class="text-white">6</h3><h6 class="text-uppercase text-white">Teachers</h6></div></div>
+                        <div class="col-6 col-md-3 px-0"><div class="bg-secondary text-center p-4"><h3 class="text-white">19</h3><h6 class="text-uppercase text-white">Students</h6></div></div>
+                        <div class="col-6 col-md-3 px-0"><div class="bg-warning text-center p-4"><h3 class="text-white">40m</h3><h6 class="text-uppercase text-white">Lessons</h6></div></div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- About End -->
+    </section>
 
-
-    <!-- Feature Start -->
-    <div class="container-fluid bg-image" style="margin: 90px 0;">
+    <!-- Why SpeakO -->
+    <section class="container-fluid bg-image" style="margin: 90px 0;" aria-labelledby="why-heading">
         <div class="container">
             <div class="row">
                 <div class="col-lg-7 my-5 pt-5 pb-lg-5">
                     <div class="section-title position-relative mb-4">
-                        <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Why Choose Us?</h6>
-                        <h1 class="display-4">Why You Should Start Learning with Us?</h1>
+                        <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Why Choose SpeakO?</h6>
+                        <h2 id="why-heading" class="display-4">English Lessons Built Around Your Goals</h2>
                     </div>
-                    <p class="mb-4 pb-2">Learning English shouldn't be scary. It shouldn't be boring. And it definitely shouldn't feel like a chore. At Learnz, we've built a system that actually works—because we've been in your shoes.</p>
-                    <div class="d-flex mb-3">
-                        <div class="btn-icon bg-primary mr-4">
-                            <i class="fa fa-2x fa-graduation-cap text-white"></i>
-                        </div>
-                        <div class="mt-n1">
-                            <h4>Skilled Instructors</h4>
-                            <p>Our teachers aren't random foreigners. They're certified professionals with 5+ years of experience teaching Chinese students specifically. They know the common mistakes, the cultural differences, and exactly how to boost confidence.</p>
-                        </div>
+                    <p class="mb-4">SpeakO focuses on one-to-one learning so your lesson can match your level, goals and pace.</p>
+                    <div class="d-flex mb-4">
+                        <div class="btn-icon bg-primary mr-4"><i class="fa fa-2x fa-user text-white"></i></div>
+                        <div class="mt-n1"><h3>One-to-One Attention</h3><p>Every 40-minute lesson is focused on one student, with time for questions, speaking practice and personalized feedback.</p></div>
                     </div>
-                    <div class="d-flex mb-3">
-                        <div class="btn-icon bg-secondary mr-4">
-                            <i class="fa fa-2x fa-certificate text-white"></i>
-                        </div>
-                        <div class="mt-n1">
-                            <h4>International Certificate</h4>
-                            <p>Every Learnz student receives a completion certificate accredited by international bodies. Whether your child wants to study abroad or your career needs an IELTS score—we prepare you for real success.</p>
-                        </div>
+                    <div class="d-flex mb-4">
+                        <div class="btn-icon bg-secondary mr-4"><i class="fa fa-2x fa-clock text-white"></i></div>
+                        <div class="mt-n1"><h3>Flexible Learning</h3><p>Choose individual classes, a five-class package, ten classes or a monthly plan according to your schedule.</p></div>
                     </div>
                     <div class="d-flex">
-                        <div class="btn-icon bg-warning mr-4">
-                            <i class="fa fa-2x fa-book-reader text-white"></i>
-                        </div>
-                        <div class="mt-n1">
-                            <h4>Online Classes</h4>
-                            <p class="m-0">25-minute lessons. 24/7 scheduling. All you need is a phone or tablet. No commuting, no stress. Perfect for busy students and working professionals.</p>
-                        </div>
+                        <div class="btn-icon bg-warning mr-4"><i class="fa fa-2x fa-comments text-white"></i></div>
+                        <div class="mt-n1"><h3>Practical English Skills</h3><p>Build speaking, listening, reading, writing, pronunciation, vocabulary and conversation skills for real-life communication.</p></div>
                     </div>
                 </div>
                 <div class="col-lg-5" style="min-height: 500px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100" src="img/feature.png" style="object-fit: cover;">
+                        <img class="position-absolute w-100 h-100" src="img/feature.png" style="object-fit: cover;" alt="SpeakO one-to-one online English lesson">
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Feature Start -->
+    </section>
 
-
-    <!-- Courses Start -->
-    <div class="container-fluid px-0 py-5">
+    <!-- Courses -->
+    <section class="container-fluid px-0 py-5" aria-labelledby="courses-heading">
         <div class="row mx-0 justify-content-center pt-5">
-            <div class="col-lg-6">
-                <div class="section-title text-center position-relative mb-4">
-                    <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Our Courses</h6>
-                    <h1 class="display-4">Checkout New Releases Of Our Courses</h1>
+            <div class="col-lg-7">
+                <div class="section-title text-center position-relative mb-5">
+                    <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">SpeakO Courses</h6>
+                    <h2 id="courses-heading" class="display-4">Choose the English Course That Fits You</h2>
+                    <p>All courses are available as personalized one-to-one online lessons.</p>
                 </div>
             </div>
         </div>
         <div class="owl-carousel courses-carousel">
-            <div class="courses-item position-relative">
-                <img class="img-fluid" src="img/courses-1.jpg" alt="">
-                <div class="courses-text">
-                    <h4 class="text-center text-white px-3">General English For Beginner & Intermediate</h4>
-                    <div class="border-top w-100 mt-3">
-                        <div class="d-flex justify-content-between p-4">
-                            <span class="text-white"><i class="fa fa-user mr-2"></i>Jhon Doe</span>
-                            <span class="text-white"><i class="fa fa-star mr-2"></i>4.5 <small>(250)</small></span>
-                        </div>
-                    </div>
-                    <div class="w-100 bg-white text-center p-4" >
-                        <a class="btn btn-primary" href="detail.html">Course Detail</a>
-                    </div>
-                </div>
-            </div>
-            <div class="courses-item position-relative">
-                <img class="img-fluid" src="img/courses-2.jpg" alt="">
-                <div class="courses-text">
-                    <h4 class="text-center text-white px-3">IELTS Preparation</h4>
-                    <div class="border-top w-100 mt-3">
-                        <div class="d-flex justify-content-between p-4">
-                            <span class="text-white"><i class="fa fa-user mr-2"></i>Jhon Doe</span>
-                            <span class="text-white"><i class="fa fa-star mr-2"></i>4.5 <small>(250)</small></span>
-                        </div>
-                    </div>
-                    <div class="w-100 bg-white text-center p-4" >
-                        <a class="btn btn-primary" href="detail.html">Course Detail</a>
-                    </div>
-                </div>
-            </div>
-            <div class="courses-item position-relative">
-                <img class="img-fluid" src="img/courses-3.jpg" alt="">
-                <div class="courses-text">
-                    <h4 class="text-center text-white px-3">Business English Professional Communication</h4>
-                    <div class="border-top w-100 mt-3">
-                        <div class="d-flex justify-content-between p-4">
-                            <span class="text-white"><i class="fa fa-user mr-2"></i>Jhon Doe</span>
-                            <span class="text-white"><i class="fa fa-star mr-2"></i>4.5 <small>(250)</small></span>
-                        </div>
-                    </div>
-                    <div class="w-100 bg-white text-center p-4" >
-                        <a class="btn btn-primary" href="detail.html">Course Detail</a>
-                    </div>
-                </div>
-            </div>
-            <div class="courses-item position-relative">
-                <img class="img-fluid" src="img/courses-4.jpg" alt="">
-                <div class="courses-text">
-                    <h4 class="text-center text-white px-3">Spoken Confidence Conversation Fluency</h4>
-                    <div class="border-top w-100 mt-3">
-                        <div class="d-flex justify-content-between p-4">
-                            <span class="text-white"><i class="fa fa-user mr-2"></i>Jhon Doe</span>
-                            <span class="text-white"><i class="fa fa-star mr-2"></i>4.5 <small>(250)</small></span>
-                        </div>
-                    </div>
-                    <div class="w-100 bg-white text-center p-4" >
-                        <a class="btn btn-primary" href="detail.html">Course Detail</a>
-                    </div>
-                </div>
-            </div>
-            <div class="courses-item position-relative">
-                <img class="img-fluid" src="img/courses-5.jpg" alt="">
-                <div class="courses-text">
-                    <h4 class="text-center text-white px-3"> Kids English Young Learners</h4>
-                    <div class="border-top w-100 mt-3">
-                        <div class="d-flex justify-content-between p-4">
-                            <span class="text-white"><i class="fa fa-user mr-2"></i>Jhon Doe</span>
-                            <span class="text-white"><i class="fa fa-star mr-2"></i>4.5 <small>(250)</small></span>
-                        </div>
-                    </div>
-                    <div class="w-100 bg-white text-center p-4" >
-                        <a class="btn btn-primary" href="detail.html">Course Detail</a>
-                    </div>
-                </div>
-            </div>
-            <div class="courses-item position-relative">
-                <img class="img-fluid" src="img/courses-6.jpg" alt="">
-                <div class="courses-text">
-                    <h4 class="text-center text-white px-3">Web design & development courses for beginners</h4>
-                    <div class="border-top w-100 mt-3">
-                        <div class="d-flex justify-content-between p-4">
-                            <span class="text-white"><i class="fa fa-user mr-2"></i>Jhon Doe</span>
-                            <span class="text-white"><i class="fa fa-star mr-2"></i>4.5 <small>(250)</small></span>
-                        </div>
-                    </div>
-                    <div class="w-100 bg-white text-center p-4" >
-                        <a class="btn btn-primary" href="detail.html">Course Detail</a>
-                    </div>
-                </div>
-            </div>
+            <div class="courses-item position-relative"><img class="img-fluid" src="img/courses-1.jpg" alt="SpeakO everyday English and conversation course"><div class="courses-text"><h3 class="text-center text-white px-3">Everyday English &amp; Conversation</h3><div class="w-100 bg-white text-center p-4"><a class="btn btn-primary" href="course.html">View Course</a></div></div></div>
+            <div class="courses-item position-relative"><img class="img-fluid" src="img/courses-2.jpg" alt="SpeakO IELTS preparation course"><div class="courses-text"><h3 class="text-center text-white px-3">IELTS Preparation</h3><div class="w-100 bg-white text-center p-4"><a class="btn btn-primary" href="course.html">View Course</a></div></div></div>
+            <div class="courses-item position-relative"><img class="img-fluid" src="img/courses-3.jpg" alt="SpeakO business English course"><div class="courses-text"><h3 class="text-center text-white px-3">Business English</h3><div class="w-100 bg-white text-center p-4"><a class="btn btn-primary" href="course.html">View Course</a></div></div></div>
+            <div class="courses-item position-relative"><img class="img-fluid" src="img/courses-4.jpg" alt="SpeakO English speaking and confidence course"><div class="courses-text"><h3 class="text-center text-white px-3">English Speaking &amp; Confidence</h3><div class="w-100 bg-white text-center p-4"><a class="btn btn-primary" href="course.html">View Course</a></div></div></div>
+            <div class="courses-item position-relative"><img class="img-fluid" src="img/courses-5.jpg" alt="SpeakO English for kids and young learners"><div class="courses-text"><h3 class="text-center text-white px-3">English for Kids &amp; Young Learners</h3><div class="w-100 bg-white text-center p-4"><a class="btn btn-primary" href="course.html">View Course</a></div></div></div>
+            <div class="courses-item position-relative"><img class="img-fluid" src="img/courses-6.jpg" alt="SpeakO English for beginners"><div class="courses-text"><h3 class="text-center text-white px-3">English for Beginners</h3><div class="w-100 bg-white text-center p-4"><a class="btn btn-primary" href="course.html">View Course</a></div></div></div>
         </div>
-       
-    <!-- Courses End -->
+    </section>
 
-
-    <!-- Team Start -->
-    <div class="container-fluid py-5">
+    <!-- Pricing -->
+    <section class="container-fluid py-5 bg-light" aria-labelledby="pricing-heading">
         <div class="container py-5">
             <div class="section-title text-center position-relative mb-5">
-                <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Instructors</h6>
-                <h1 class="display-4">Meet Our Instructors</h1>
+                <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Simple Pricing</h6>
+                <h2 id="pricing-heading" class="display-4">Choose Your SpeakO Plan</h2>
             </div>
-            <div class="owl-carousel team-carousel position-relative" style="padding: 0 30px;">
-                <a href="shah.html">
-                <div class="team-item">
-                    <img class="img-fluid w-100" src="img/team-1.png" alt="">
-                    <div class="bg-light text-center p-4">
-                        <h5 class="mb-3">Shah</h5>
-                        <p class="mb-2">English Teacher</p>
-                        <div class="d-flex justify-content-center">
-                            <a class="mx-1 p-1" href="#"><i class="fab fa-twitter"></i></a>
-                            <a class="mx-1 p-1" href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a class="mx-1 p-1" href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a class="mx-1 p-1" href="#"><i class="fab fa-instagram"></i></a>
-                            <a class="mx-1 p-1" href="#"><i class="fab fa-youtube"></i></a>
-                        </div>
-                    </div>
-                </div></a>
-                <div class="team-item">
-                    <img class="img-fluid w-100" src="img/team-2.jpg" alt="">
-                    <div class="bg-light text-center p-4">
-                        <h5 class="mb-3">sakib</h5>
-                        <p class="mb-2">English Teacher</p>
-                        <div class="d-flex justify-content-center">
-                            <a class="mx-1 p-1" href="#"><i class="fab fa-twitter"></i></a>
-                            <a class="mx-1 p-1" href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a class="mx-1 p-1" href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a class="mx-1 p-1" href="#"><i class="fab fa-instagram"></i></a>
-                            <a class="mx-1 p-1" href="#"><i class="fab fa-youtube"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-item">
-                    <img class="img-fluid w-100" src="img/team-3.jpg" alt="">
-                    <div class="bg-light text-center p-4">
-                        <h5 class="mb-3">umber</h5>
-                        <p class="mb-2">English Teacher</p>
-                        <div class="d-flex justify-content-center">
-                            <a class="mx-1 p-1" href="#"><i class="fab fa-twitter"></i></a>
-                            <a class="mx-1 p-1" href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a class="mx-1 p-1" href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a class="mx-1 p-1" href="#"><i class="fab fa-instagram"></i></a>
-                            <a class="mx-1 p-1" href="#"><i class="fab fa-youtube"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-item">
-                    <img class="img-fluid w-100" src="img/team-4.jpg" alt="">
-                    <div class="bg-light text-center p-4">
-                        <h5 class="mb-3">Instructor Name</h5>
-                        <p class="mb-2">Web Design & Development</p>
-                        <div class="d-flex justify-content-center">
-                            <a class="mx-1 p-1" href="#"><i class="fab fa-twitter"></i></a>
-                            <a class="mx-1 p-1" href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a class="mx-1 p-1" href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a class="mx-1 p-1" href="#"><i class="fab fa-instagram"></i></a>
-                            <a class="mx-1 p-1" href="#"><i class="fab fa-youtube"></i></a>
-                        </div>
-                    </div>
-                </div>
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-3 mb-4"><div class="bg-white text-center p-4 h-100"><h3>Trial</h3><div class="display-4 text-primary">¥20</div><p>40-minute assessment + personalized recommendation</p><a href="contact.html" class="btn btn-primary">Book Trial</a></div></div>
+                <div class="col-md-6 col-lg-3 mb-4"><div class="bg-white text-center p-4 h-100"><h3>Single</h3><div class="display-4 text-primary">¥40</div><p>One 40-minute one-to-one lesson</p><a href="contact.html" class="btn btn-primary">Book Class</a></div></div>
+                <div class="col-md-6 col-lg-3 mb-4"><div class="bg-white text-center p-4 h-100"><h3>5 Classes</h3><div class="display-4 text-primary">¥190</div><p>Five 40-minute one-to-one lessons</p><a href="contact.html" class="btn btn-primary">Get Started</a></div></div>
+                <div class="col-md-6 col-lg-3 mb-4"><div class="bg-white text-center p-4 h-100"><h3>10 Classes</h3><div class="display-4 text-primary">¥370</div><p>Ten 40-minute one-to-one lessons</p><a href="contact.html" class="btn btn-primary">Get Started</a></div></div>
             </div>
+            <div class="text-center mt-3"><strong>Monthly plan: ¥1,100 for 30 classes.</strong></div>
         </div>
-    </div>
-    <!-- Team End -->
+    </section>
 
-
-    <!-- Testimonial Start -->
-    <div class="container-fluid bg-image py-5" style="margin: 90px 0;">
+    <!-- Teachers -->
+    <section class="container-fluid py-5" aria-labelledby="teachers-heading">
         <div class="container py-5">
-            <div class="row align-items-center">
-                <div class="col-lg-5 mb-5 mb-lg-0">
-                    <div class="section-title position-relative mb-4">
-                        <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Testimonial</h6>
-                        <h1 class="display-4">What Say Our Students</h1>
-                    </div>
-                    <p class="m-0">Dolor est dolores et nonumy sit labore dolores est sed rebum amet, justo duo ipsum sanctus dolore magna rebum sit et. Diam lorem ea sea at. Nonumy et at at sed justo est nonumy tempor. Vero sea ea eirmod, elitr ea amet diam ipsum at amet. Erat sed stet eos ipsum diam</p>
-                </div>
-                <div class="col-lg-7">
-                    <div class="owl-carousel testimonial-carousel">
-                        <div class="bg-white p-5">
-                            <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-                            <p>Sed et elitr ipsum labore dolor diam, ipsum duo vero sed sit est est ipsum eos clita est ipsum. Est nonumy tempor at kasd. Sed at dolor duo ut dolor, et justo erat dolor magna sed stet amet elitr duo lorem</p>
-                            <div class="d-flex flex-shrink-0 align-items-center mt-4">
-                                <img class="img-fluid mr-4" src="img/testimonial-2.jpg" alt="">
-                                <div>
-                                    <h5>Student Name</h5>
-                                    <span>Web Design</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="bg-white p-5">
-                            <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-                            <p>Sed et elitr ipsum labore dolor diam, ipsum duo vero sed sit est est ipsum eos clita est ipsum. Est nonumy tempor at kasd. Sed at dolor duo ut dolor, et justo erat dolor magna sed stet amet elitr duo lorem</p>
-                            <div class="d-flex flex-shrink-0 align-items-center mt-4">
-                                <img class="img-fluid mr-4" src="img/testimonial-1.jpg" alt="">
-                                <div>
-                                    <h5>Student Name</h5>
-                                    <span>Web Design</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Testimonial Start -->
-
-
-    <!-- Contact Start -->
-    <div class="container-fluid py-5">
-        <div class="container py-5">
-            <div class="row align-items-center">
-                <div class="col-lg-5 mb-5 mb-lg-0">
-                    <div class="bg-light d-flex flex-column justify-content-center px-5" style="height: 450px;">
-                        <div class="d-flex align-items-center mb-5">
-                            <div class="btn-icon bg-primary mr-4">
-                                <i class="fa fa-2x fa-map-marker-alt text-white"></i>
-                            </div>
-                            <div class="mt-n1">
-                                <h4>Our Location</h4>
-                                <p class="m-0"> 1 Nan Shan Zhong Lu, Long Kou Shi Yantai 265006 Shandong</p>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-center mb-5">
-                            <div class="btn-icon bg-secondary mr-4">
-                                <i class="fa fa-2x fa-phone-alt text-white"></i>
-                            </div>
-                            <div class="mt-n1">
-                                <h4>Call Us</h4>
-                                <p class="m-0">+012 345 6789</p>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-center">
-                            <div class="btn-icon bg-warning mr-4">
-                                <i class="fa fa-2x fa-envelope text-white"></i>
-                            </div>
-                            <div class="mt-n1">
-                                <h4>Email Us</h4>
-                                <p class="m-0">faizankhankhattak04@gmail.com</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-7">
-                    <div class="section-title position-relative mb-4">
-                        <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Need Help?</h6>
-                        <h1 class="display-4">Send Us A Message</h1>
-                    </div>
-                    <div class="contact-form">
-                        <form>
-                            <div class="row">
-                                <div class="col-6 form-group">
-                                    <input type="text" class="form-control border-top-0 border-right-0 border-left-0 p-0" placeholder="Your Name" required="required">
-                                </div>
-                                <div class="col-6 form-group">
-                                    <input type="email" class="form-control border-top-0 border-right-0 border-left-0 p-0" placeholder="Your Email" required="required">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control border-top-0 border-right-0 border-left-0 p-0" placeholder="Subject" required="required">
-                            </div>
-                            <div class="form-group">
-                                <textarea class="form-control border-top-0 border-right-0 border-left-0 p-0" rows="5" placeholder="Message" required="required"></textarea>
-                            </div>
-                            <div>
-                                <button class="btn btn-primary py-3 px-5" type="submit">Send Message</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Contact End -->
-
-
-    <!-- Footer Start -->
-    <div class="container-fluid position-relative overlay-top bg-dark text-white-50 py-5" style="margin-top: 90px;">
-        <div class="container mt-5 pt-5">
-            <div class="row">
-                <div class="col-md-6 mb-5">
-                    <a href="index.html" class="navbar-brand">
-                        <h1 class="mt-n2 text-uppercase text-white"><i class="fa fa-book-reader mr-3"></i>Edukate</h1>
-                    </a>
-                    <p class="m-0">Accusam nonumy clita sed rebum kasd eirmod elitr. Ipsum ea lorem at et diam est, tempor rebum ipsum sit ea tempor stet et consetetur dolores. Justo stet diam ipsum lorem vero clita diam</p>
-                </div>
-                <div class="col-md-6 mb-5">
-                    <h3 class="text-white mb-4">Newsletter</h3>
-                    <div class="w-100">
-                        <div class="input-group">
-                            <input type="text" class="form-control border-light" style="padding: 30px;" placeholder="Your Email Address">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary px-4">Sign Up</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="section-title text-center position-relative mb-5">
+                <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Our Teachers</h6>
+                <h2 id="teachers-heading" class="display-4">Meet the SpeakO Teaching Team</h2>
+                <p>Six teachers with different strengths for beginner, kids and advanced English learners.</p>
             </div>
             <div class="row">
-                <div class="col-md-4 mb-5">
-                    <h3 class="text-white mb-4">Get In Touch</h3>
-                    <p><i class="fa fa-map-marker-alt mr-2"></i> 1 Nan Shan Zhong Lu, Long Kou Shi Yantai 265006 Shandong </p>
-                    <p><i class="fa fa-phone-alt mr-2"></i>+012 345 67890</p>
-                    <p><i class="fa fa-envelope mr-2"></i>faizankhankhattak04@gmail.com</p>
-                    <div class="d-flex justify-content-start mt-4">
-                        <a class="text-white mr-4" href="#"><i class="fab fa-2x fa-twitter"></i></a>
-                        <a class="text-white mr-4" href="#"><i class="fab fa-2x fa-facebook-f"></i></a>
-                        <a class="text-white mr-4" href="#"><i class="fab fa-2x fa-linkedin-in"></i></a>
-                        <a class="text-white" href="#"><i class="fab fa-2x fa-instagram"></i></a>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-5">
-                    <h3 class="text-white mb-4">Our Courses</h3>
-                    <div class="d-flex flex-column justify-content-start">
-                        <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>General English	Beginner & Intermediate</a>
-                        <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>IELTS Preparation</a>
-                        <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Professional Communication</a>
-                        <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Conversation Fluency</a>
-                        <a class="text-white-50" href="#"><i class="fa fa-angle-right mr-2"></i>Young Learners</a>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-5">
-                    <h3 class="text-white mb-4">Quick Links</h3>
-                    <div class="d-flex flex-column justify-content-start">
-                        <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Privacy Policy</a>
-                        <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Terms & Condition</a>
-                        <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Regular FAQs</a>
-                        <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Help & Support</a>
-                        <a class="text-white-50" href="#"><i class="fa fa-angle-right mr-2"></i>Contact</a>
-                    </div>
-                </div>
+                <div class="col-md-4 col-lg-2 mb-4"><div class="team-item"><img class="img-fluid w-100" src="img/team-1.png" alt="Shah English teacher at SpeakO"><div class="bg-light text-center p-3"><h3 class="h5 mb-2">Shah</h3><p class="mb-0">Fluent English · Advanced</p></div></div></div>
+                <div class="col-md-4 col-lg-2 mb-4"><div class="team-item"><img class="img-fluid w-100" src="img/team-2.jpg" alt="Sakib English teacher at SpeakO"><div class="bg-light text-center p-3"><h3 class="h5 mb-2">Sakib</h3><p class="mb-0">Advanced · Kids &amp; Beginners</p></div></div></div>
+                <div class="col-md-4 col-lg-2 mb-4"><div class="team-item"><img class="img-fluid w-100" src="img/team-3.jpg" alt="Umer English teacher at SpeakO"><div class="bg-light text-center p-3"><h3 class="h5 mb-2">Umer</h3><p class="mb-0">Advanced · Kids &amp; Beginners</p></div></div></div>
+                <div class="col-md-4 col-lg-2 mb-4"><div class="team-item"><img class="img-fluid w-100" src="img/team-4.jpg" alt="Nomi English teacher at SpeakO"><div class="bg-light text-center p-3"><h3 class="h3 mb-2">Nomi</h3><p class="mb-0">Fluent · Advanced</p></div></div></div>
+                <div class="col-md-4 col-lg-2 mb-4"><div class="team-item"><img class="img-fluid w-100" src="img/team-5.jpg" alt="Faizan English teacher at SpeakO"><div class="bg-light text-center p-3"><h3 class="h5 mb-2">Faizan</h3><p class="mb-0">Fluent · Kids &amp; Beginners</p></div></div></div>
+                <div class="col-md-4 col-lg-2 mb-4"><div class="team-item"><img class="img-fluid w-100" src="img/team-6.jpg" alt="Dua English teacher at SpeakO"><div class="bg-light text-center p-3"><h3 class="h5 mb-2">Dua</h3><p class="mb-0">PhD in English · Fluent</p></div></div></div>
             </div>
         </div>
-    </div>
-    <div class="container-fluid bg-dark text-white-50 border-top py-4" style="border-color: rgba(256, 256, 256, .1) !important;">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 text-center text-md-left mb-3 mb-md-0">
-                    <p class="m-0">Copyright &copy; <a class="text-white" href="#">Your Site Name</a>. All Rights Reserved.
-                    </p>
-                </div>
-                <div class="col-md-6 text-center text-md-right">
-                    <p class="m-0">Designed by <a class="text-white" href="https://htmlcodex.com">HTML Codex</a> Distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a></p>
-                </div>
+    </section>
+
+    <!-- No fake testimonials -->
+    <section class="container-fluid py-5 bg-light" aria-labelledby="trust-heading">
+        <div class="container py-5 text-center">
+            <div class="section-title position-relative mb-4">
+                <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Why SpeakO</h6>
+                <h2 id="trust-heading" class="display-4">A Personal Learning Experience</h2>
             </div>
+            <p class="lead">SpeakO currently teaches students from China through flexible one-to-one online lessons. We focus on practical English, personalized learning and direct teacher attention.</p>
         </div>
-    </div>
-    <!-- Footer End -->
+    </section>
 
+    <!-- Final CTA -->
+    <section class="container-fluid py-5" aria-labelledby="cta-heading">
+        <div class="container py-5 text-center">
+            <h2 id="cta-heading" class="display-4 mb-4">Ready to Improve Your English?</h2>
+            <p class="lead mb-4">Start with a 40-minute trial, English level assessment and personalized learning recommendation for ¥20.</p>
+            <a href="contact.html" class="btn btn-primary py-3 px-5 mr-2">Book ¥20 Trial</a>
+            <a href="course.html" class="btn btn-secondary py-3 px-5">Explore Courses</a>
+            <p class="mt-4 mb-0">WeChat: <strong>SHAH1122-COM</strong> · Email: <strong>speakup521@gmail.com</strong> · Phone: <strong>+86 19819208727</strong></p>
+        </div>
+    </section>
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary rounded-0 btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+    <!-- Footer -->
+    <footer class="container-fluid bg-dark text-white py-4">
+        <div class="container text-center">
+            <h3 class="text-white">SpeakO</h3>
+            <p class="mb-2">1-to-1 online English classes for Chinese students.</p>
+            <p class="mb-0 small">© SpeakO. All rights reserved.</p>
+        </div>
+    </footer>
 
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top" aria-label="Back to top"><i class="fa fa-angle-double-up"></i></a>
 
-    <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/counterup/counterup.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
-    <!-- Template Javascript -->
     <script src="js/main.js"></script>
 </body>
-
 </html>

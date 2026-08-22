@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Do not expose development or source-control metadata
+Disallow: /.git/
+Disallow: /.github/
+
+# Sitemap URL will be updated to the final production domain before launch
+# Sitemap: https://YOUR-DOMAIN.example/sitemap.xml

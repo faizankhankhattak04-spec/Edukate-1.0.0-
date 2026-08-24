@@ -1,0 +1,58 @@
+name: SpeakO homepage asset fix
+
+on:
+  push:
+    branches:
+      - seo/speako-development
+
+permissions:
+  contents: write
+
+jobs:
+  fix-assets:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout development branch
+        uses: actions/checkout@v4
+        with:
+          ref: seo/speako-development
+
+      - name: Repair teacher image paths
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('index.html')
+          s = p.read_text(encoding='utf-8')
+          replacements = {
+              'img/teachers/shah.webp': 'img/teachers/shah.png',
+              'img/teachers/nomi.webp': 'img/teachers/nomi.jpg',
+              'img/teachers/faizan.webp': 'img/teachers/faizan.jpg',
+              'img/teachers/umer.webp': 'img/teachers/umer.jpg',
+              'img/teachers/sakib.webp': 'img/teachers/sakib.jpg',
+              'img/teachers/dua.webp': 'img/teachers/Doaa.jpg',
+          }
+          for old, new in replacements.items():
+              s = s.replace(old, new)
+          p.write_text(s, encoding='utf-8')
+          PY
+
+      - name: Commit homepage asset repair
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          if git diff --cached --quiet; then
+            echo "No changes needed"
+            exit 0
+          fi
+          git commit -m "Fix #1C-A: use actual teacher image filenames"
+          git push origin HEAD:seo/speako-development
+
+      - name: Remove temporary workflow
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm .github/workflows/speako-homepage-asset-fix.yml
+          git commit -m "chore: remove temporary homepage asset fixer"
+          git push origin HEAD:seo/speako-development

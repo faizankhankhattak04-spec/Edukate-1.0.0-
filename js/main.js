@@ -1,8 +1,13 @@
 (function ($) {
     "use strict";
 
-    // SpeakO site-wide navigation and contact bar.
-    // Keeping this in one place prevents individual template pages from drifting.
+    var SPEAKO_WECHAT = '18969190005';
+    var SPEAKO_PHONE = '+86 18969190005';
+
+    function logoPath() {
+        return window.location.pathname.indexOf('/teachers/') !== -1 ? '../img/speako-logo.webp' : 'img/speako-logo.webp';
+    }
+
     function applySpeakONavigation() {
         var currentPage = window.location.pathname.split('/').pop() || 'index.html';
 
@@ -10,10 +15,12 @@
         <div class="container-fluid bg-dark">\
             <div class="row py-2 px-lg-5">\
                 <div class="col-12 text-center">\
-                    <div class="d-inline-flex align-items-center text-white">\
-                        <small><i class="fa fa-weixin mr-2" aria-hidden="true"></i>WeChat: SHAH1122-COM</small>\
+                    <div class="d-inline-flex align-items-center text-white flex-wrap justify-content-center">\
+                        <small><i class="fa fa-phone-alt mr-2" aria-hidden="true"></i>' + SPEAKO_PHONE + '</small>\
                         <small class="px-3">|</small>\
-                        <small><i class="fa fa-envelope mr-2" aria-hidden="true"></i>speakup521@gmail.com</small>\
+                        <small><i class="fab fa-weixin mr-2" aria-hidden="true"></i>WeChat: ' + SPEAKO_WECHAT + '</small>\
+                        <small class="px-3 d-none d-md-inline">|</small>\
+                        <small class="d-none d-md-inline"><i class="fa fa-envelope mr-2" aria-hidden="true"></i>speakup521@gmail.com</small>\
                     </div>\
                 </div>\
             </div>\
@@ -21,10 +28,11 @@
 
         var links = [
             ['index.html', 'Home'],
-            ['about.html', 'About SpeakO'],
+            ['about.html', 'About'],
             ['course.html', 'Courses'],
             ['team.html', 'Teachers'],
-            ['contact.html#pricing', 'Pricing'],
+            ['pricing.html', 'Pricing'],
+            ['faq.html', 'FAQ'],
             ['contact.html', 'Contact']
         ];
 
@@ -36,9 +44,9 @@
 
         var navbar = '\
         <div class="container-fluid p-0">\
-            <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0 px-lg-5" aria-label="Main navigation">\
+            <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0 px-lg-5 speako-nav" aria-label="Main navigation">\
                 <a href="index.html" class="navbar-brand ml-lg-3" aria-label="SpeakO home">\
-                    <h1 class="m-0 text-uppercase text-primary"><i class="fa fa-book-reader mr-3" aria-hidden="true"></i>SpeakO</h1>\
+                    <img src="' + logoPath() + '" alt="SpeakO" class="speako-site-logo">\
                 </a>\
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">\
                     <span class="navbar-toggler-icon"></span>\
@@ -51,7 +59,7 @@
         </div>';
 
         var existingTopbar = document.querySelector('.container-fluid.bg-dark');
-        if (existingTopbar && existingTopbar.querySelector('.fa-phone-alt, .fa-envelope, .fa-facebook-f')) {
+        if (existingTopbar && existingTopbar.querySelector('.fa-phone-alt, .fa-envelope, .fa-facebook-f, .fa-weixin')) {
             existingTopbar.outerHTML = topbar;
         }
 
@@ -62,10 +70,37 @@
         }
     }
 
+    function applyBrandAndContactUpdates() {
+        document.querySelectorAll('a[href^="tel:"]').forEach(function (el) {
+            el.href = 'tel:+8618969190005';
+            if (el.textContent.indexOf('Call') !== -1) el.textContent = 'Call ' + SPEAKO_PHONE;
+        });
+
+        document.querySelectorAll('a[href*="19819208727"]').forEach(function (el) {
+            el.href = el.href.replace(/19819208727/g, '18969190005');
+        });
+
+        document.querySelectorAll('script[type="application/ld+json"]').forEach(function (script) {
+            try {
+                var data = JSON.parse(script.textContent);
+                if (data && (data.telephone || data['@type'] === 'EducationalOrganization')) {
+                    data.telephone = SPEAKO_PHONE;
+                    data.email = 'speakup521@gmail.com';
+                    script.textContent = JSON.stringify(data);
+                }
+            } catch (e) {}
+        });
+
+        document.querySelectorAll('img[alt="SpeakO"], img.speako-site-logo').forEach(function (img) {
+            img.src = logoPath();
+            img.alt = 'SpeakO';
+        });
+    }
+
     $(document).ready(function () {
         applySpeakONavigation();
+        applyBrandAndContactUpdates();
 
-        // Dropdown on mouse hover (kept for compatibility with any legacy dropdowns).
         function toggleNavbarMethod() {
             if ($(window).width() > 992) {
                 $('.navbar .dropdown').on('mouseover', function () {
@@ -81,91 +116,20 @@
         $(window).resize(toggleNavbarMethod);
     });
 
-    // Back to top button
     $(window).scroll(function () {
-        if ($(this).scrollTop() > 100) {
-            $('.back-to-top').fadeIn('slow');
-        } else {
-            $('.back-to-top').fadeOut('slow');
-        }
+        if ($(this).scrollTop() > 100) $('.back-to-top').fadeIn('slow');
+        else $('.back-to-top').fadeOut('slow');
     });
     $('.back-to-top').click(function () {
         $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
         return false;
     });
 
-    // Facts counter
-    $('[data-toggle="counter-up"]').counterUp({
-        delay: 10,
-        time: 2000
-    });
+    $('[data-toggle="counter-up"]').counterUp({delay: 10, time: 2000});
 
-    // Courses carousel
-    $(".courses-carousel").owlCarousel({
-        autoplay: true,
-        smartSpeed: 1500,
-        loop: true,
-        dots: false,
-        nav: false,
-        responsive: {
-            0: { items: 1 },
-            576: { items: 2 },
-            768: { items: 3 },
-            992: { items: 4 }
-        }
-    });
-
-    // Team carousel
-    $(".team-carousel").owlCarousel({
-        autoplay: true,
-        smartSpeed: 1000,
-        margin: 30,
-        dots: false,
-        loop: true,
-        nav: true,
-        navText: [
-            '<i class="fa fa-angle-left" aria-hidden="true"></i>',
-            '<i class="fa fa-angle-right" aria-hidden="true"></i>'
-        ],
-        responsive: {
-            0: { items: 1 },
-            576: { items: 1 },
-            768: { items: 2 },
-            992: { items: 3 }
-        }
-    });
-
-    // Testimonials carousel
-    $(".testimonial-carousel").owlCarousel({
-        autoplay: true,
-        smartSpeed: 1500,
-        items: 1,
-        dots: false,
-        loop: true,
-        nav: true,
-        navText: [
-            '<i class="fa fa-angle-left" aria-hidden="true"></i>',
-            '<i class="fa fa-angle-right" aria-hidden="true"></i>'
-        ]
-    });
-
-    // Related carousel
-    $(".related-carousel").owlCarousel({
-        autoplay: true,
-        smartSpeed: 1000,
-        margin: 30,
-        dots: false,
-        loop: true,
-        nav: true,
-        navText: [
-            '<i class="fa fa-angle-left" aria-hidden="true"></i>',
-            '<i class="fa fa-angle-right" aria-hidden="true"></i>'
-        ],
-        responsive: {
-            0: { items: 1 },
-            576: { items: 1 },
-            768: { items: 2 }
-        }
-    });
+    $(".courses-carousel").owlCarousel({autoplay: true, smartSpeed: 1500, loop: true, dots: false, nav: false, responsive: {0:{items:1},576:{items:2},768:{items:3},992:{items:4}}});
+    $(".team-carousel").owlCarousel({autoplay:true,smartSpeed:1000,margin:30,dots:false,loop:true,nav:true,navText:['<i class="fa fa-angle-left" aria-hidden="true"></i>','<i class="fa fa-angle-right" aria-hidden="true"></i>'],responsive:{0:{items:1},576:{items:1},768:{items:2},992:{items:3}}});
+    $(".testimonial-carousel").owlCarousel({autoplay:true,smartSpeed:1500,items:1,dots:false,loop:true,nav:true,navText:['<i class="fa fa-angle-left" aria-hidden="true"></i>','<i class="fa fa-angle-right" aria-hidden="true"></i>']});
+    $(".related-carousel").owlCarousel({autoplay:true,smartSpeed:1000,margin:30,dots:false,loop:true,nav:true,navText:['<i class="fa fa-angle-left" aria-hidden="true"></i>','<i class="fa fa-angle-right" aria-hidden="true"></i>'],responsive:{0:{items:1},576:{items:1},768:{items:2}}});
 
 })(jQuery);

@@ -5,6 +5,12 @@
     var SPEAKO_PHONE = "+86 18969190005";
     var SPEAKO_EMAIL = "speakup521@gmail.com";
 
+    var SPEAKO_TEACHER_NAMES = {
+        "Shah": "Jack",
+        "Faizan": "Mr. Faiz",
+        "Sakib": "Jhon"
+    };
+
     function isTeacherPage() {
         return window.location.pathname.indexOf("/teachers/") !== -1;
     }
@@ -86,6 +92,34 @@
         if (wechatField) wechatField.textContent = SPEAKO_WECHAT;
     }
 
+    function replaceTeacherNames() {
+        var replaceNames = function (value) {
+            if (!value) return value;
+            Object.keys(SPEAKO_TEACHER_NAMES).forEach(function (oldName) {
+                var newName = SPEAKO_TEACHER_NAMES[oldName];
+                value = value.replace(new RegExp("\\\\b" + oldName + "\\\\b", "g"), newName);
+            });
+            return value;
+        };
+
+        var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+        var node;
+        while ((node = walker.nextNode())) {
+            node.nodeValue = replaceNames(node.nodeValue);
+        }
+
+        document.querySelectorAll("[alt],[title],[aria-label]").forEach(function (el) {
+            ["alt", "title", "aria-label"].forEach(function (attr) {
+                if (el.hasAttribute(attr)) el.setAttribute(attr, replaceNames(el.getAttribute(attr)));
+            });
+        });
+
+        document.title = replaceNames(document.title);
+        document.querySelectorAll('meta[name="description"],meta[property="og:title"],meta[property="og:description"]').forEach(function (meta) {
+            meta.setAttribute("content", replaceNames(meta.getAttribute("content")));
+        });
+    }
+
     function updateStructuredData() {
         document.querySelectorAll('script[type="application/ld+json"]').forEach(function (script) {
             try {
@@ -112,6 +146,7 @@
         replaceLegacyContactText();
         updateStructuredData();
         ensureLogoImages();
+        replaceTeacherNames();
 
         function toggleNavbarMethod() {
             if ($(window).width() > 992) {
@@ -138,9 +173,9 @@
         if ($.fn.counterUp) $("[data-toggle='counter-up']").counterUp({delay: 10, time: 2000});
         if ($.fn.owlCarousel) {
             $(".courses-carousel").owlCarousel({autoplay:true,smartSpeed:1500,loop:true,dots:false,nav:false,responsive:{0:{items:1},576:{items:2},768:{items:3},992:{items:4}}});
-            $(".team-carousel").owlCarousel({autoplay:true,smartSpeed:1000,margin:30,dots:false,loop:true,nav:true,navText:['<i class="fa fa-angle-left" aria-hidden="true"></i>','<i class="fa fa-angle-right" aria-hidden="true"></i>'],responsive:{0:{items:1},576:{items:1},768:{items:2},992:{items:3}}});
-            $(".testimonial-carousel").owlCarousel({autoplay:true,smartSpeed:1500,items:1,dots:false,loop:true,nav:true,navText:['<i class="fa fa-angle-left" aria-hidden="true"></i>','<i class="fa fa-angle-right" aria-hidden="true"></i>']});
-            $(".related-carousel").owlCarousel({autoplay:true,smartSpeed:1000,margin:30,dots:false,loop:true,nav:true,navText:['<i class="fa fa-angle-left" aria-hidden="true"></i>','<i class="fa fa-angle-right" aria-hidden="true"></i>'],responsive:{0:{items:1},576:{items:1},768:{items:2}}});
+            $(".team-carousel").owlCarousel({autoplay:true,smartSpeed:1000,margin:30,dots:false,loop:true,nav:true,navText:['<i class=\"fa fa-angle-left\" aria-hidden=\"true\"></i>','<i class=\"fa fa-angle-right\" aria-hidden=\"true\"></i>'],responsive:{0:{items:1},576:{items:1},768:{items:2},992:{items:3}}});
+            $(".testimonial-carousel").owlCarousel({autoplay:true,smartSpeed:1500,items:1,dots:false,loop:true,nav:true,navText:['<i class=\"fa fa-angle-left\" aria-hidden=\"true\"></i>','<i class=\"fa fa-angle-right\" aria-hidden=\"true\"></i>']});
+            $(".related-carousel").owlCarousel({autoplay:true,smartSpeed:1000,margin:30,dots:false,loop:true,nav:true,navText:['<i class=\"fa fa-angle-left\" aria-hidden=\"true\"></i>','<i class=\"fa fa-angle-right\" aria-hidden=\"true\"></i>'],responsive:{0:{items:1},576:{items:1},768:{items:2}}});
         }
     });
 })(jQuery);

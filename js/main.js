@@ -96,8 +96,7 @@
         var replaceNames = function (value) {
             if (!value) return value;
             Object.keys(SPEAKO_TEACHER_NAMES).forEach(function (oldName) {
-                var newName = SPEAKO_TEACHER_NAMES[oldName];
-                value = value.replace(new RegExp("\\\\b" + oldName + "\\\\b", "g"), newName);
+                value = value.split(oldName).join(SPEAKO_TEACHER_NAMES[oldName]);
             });
             return value;
         };

@@ -27,6 +27,20 @@
         return rootPath() + file;
     }
 
+    function ensureCanonical() {
+        var path = window.location.pathname || "/";
+        if (path.endsWith("/index.html")) path = path.slice(0, -"index.html".length);
+        if (path === "") path = "/";
+        var canonicalUrl = "https://speako.cc" + path;
+        var canonical = document.querySelector('link[rel="canonical"]');
+        if (!canonical) {
+            canonical = document.createElement("link");
+            canonical.rel = "canonical";
+            document.head.appendChild(canonical);
+        }
+        canonical.href = canonicalUrl;
+    }
+
     function applySpeakONavigation() {
         var currentPage = window.location.pathname.split("/").pop() || "index.html";
         var topbar =
@@ -141,6 +155,7 @@
     }
 
     $(document).ready(function () {
+        ensureCanonical();
         applySpeakONavigation();
         replaceLegacyContactText();
         updateStructuredData();

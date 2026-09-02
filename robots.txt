@@ -5,5 +5,4 @@ Allow: /
 Disallow: /.git/
 Disallow: /.github/
 
-# Sitemap URL will be updated to the final production domain before launch
-# Sitemap: https://YOUR-DOMAIN.example/sitemap.xml
+Sitemap: https://speako.cc/sitemap.xml
